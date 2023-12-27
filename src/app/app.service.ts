@@ -11,6 +11,6 @@ export class AppService {
   constructor(private http: HttpClient) { }
 
   fetchData(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/posts/1`);
+    return this.http.get(this.apiUrl);
   }
 }
