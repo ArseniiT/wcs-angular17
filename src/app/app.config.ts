@@ -11,7 +11,7 @@ export const appConfig: ApplicationConfig = {
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LogInterceptor,
-       multi: true
+      multi: true
     },
     AppService,
     importProvidersFrom(HttpClientModule),
