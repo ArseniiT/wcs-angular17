@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,12 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'wcs-angular17-interceptor';
+export class AppComponent implements OnInit{
+  constructor(private appService: AppService) {}
+
+  ngOnInit() {
+    this.appService.fetchData().subscribe(data => {
+      console.log('Data:', data);
+    });
+  }
 }
